@@ -72,7 +72,7 @@ function UploadFiles({ files, id }) {
         {message}
       </div>
 
-      <div className="card"style={{height:"67vh",overflow: "scroll"}}>
+      <div className="card" style={{ height: "67vh", overflow: "scroll" }}>
         <div className="card-header">List of Files</div>
         <ul className="list-group list-group-flush">
           {files &&

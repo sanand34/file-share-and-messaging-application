@@ -1,5 +1,5 @@
-import util from "util"
-import multer from "multer"
+import util from "util";
+import multer from "multer";
 const maxSize = 10 * 1024 * 1024;
 
 let storage = multer.diskStorage({

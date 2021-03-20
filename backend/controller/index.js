@@ -1,6 +1,6 @@
-import pusher from "./pusher.js"
-import uploadFile from "./middleware/upload.js"
-import fs from "fs"
+import pusher from "./pusher.js";
+import uploadFile from "./middleware/upload.js";
+import fs from "fs";
 const port = process.env.PORT || 8000;
 const baseUrl = `${port}/files/`;
 
@@ -66,21 +66,20 @@ const download = (req, res) => {
   });
 };
 
+let message = (req, res) => {
+  pusher.trigger("messages", req.params.room, {
+    name: req.body.name,
+    message: req.body.message,
+    date: req.body.date,
+  });
+};
+let fileshare = (req, res) => {
+  pusher.trigger("fileshare", req.params.room, {
+    name: req.body.name,
+  });
+};
 
-
-let message=(req, res) => {
-    pusher.trigger("messages", req.params.room, {
-      name: req.body.name,
-      message: req.body.message,
-      date: req.body.date,
-    })}
-let fileshare=(req, res) => {
-    pusher.trigger("fileshare", req.params.room, {
-      name: req.body.name,
-    })}    
-
-
-const welcome=(req,res)=>{
+const welcome = (req, res) => {
   res.send("Welcome,backend is developed by Sanchit Anand");
-}    
-export {message,upload,getListFiles,download,welcome,fileshare}    
+};
+export { message, upload, getListFiles, download, welcome, fileshare };

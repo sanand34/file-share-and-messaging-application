@@ -13,8 +13,6 @@
   bottom: 0px;
 }
 
-
-
 .app_info {
   display: flex;
 }
@@ -28,16 +26,15 @@
   margin-top: -40 px;
   box-shadow: -1px 4px 20px -6px #0b0a0a;
 }
-.main{
- 
+.main {
   display: flex;
   flex-direction: column;
-  width:75vw;
+  width: 75vw;
 }
 .sidebar {
   display: flex;
   flex-direction: column;
-  width:25vw;
+  width: 25vw;
 }
 .input {
   font-family: "arial", sans-serif;
@@ -85,7 +82,7 @@
   margin-left: 10px;
   font-size: x-small;
 }
-.display{
+.display {
   overflow: scroll;
   padding: 20px;
   height: 70vh;
