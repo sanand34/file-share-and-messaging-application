@@ -1,8 +1,8 @@
-# `File-Share-And-Messaging`
+# File-Share-And-Messaging
 
 This is a website for sharing media,files and messages in groups or to individuals using pusher-js and rest api (without the support of any database).
 
-# `Frontend setup`
+# Frontend setup
 
 Use the package manager npm
 
@@ -10,7 +10,7 @@ Use the package manager npm
 cd frontend && npm install
 
 ```
-# `Backend setup`
+# Backend setup
 
 Use the package manager npm
 
@@ -18,9 +18,9 @@ Use the package manager npm
 cd backend && npm install
 
 ```
-# `Frontend usage`
+# Frontend usage
 
-## `Available Scripts`
+## Available Scripts
 
 In the project directory, you can run:
 
@@ -57,7 +57,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-# `Backend usage`
+# Backend usage
 
 Use the package manager npm
 
