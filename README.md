@@ -29,12 +29,14 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Alt text](demo1.png?raw=true "Title")
+## Usage
 * Enter your name
 * Press the generate or check ID to create an ID
+![Alt text](demo1.png?raw=true "Title")
 
-![Alt text](demo2.png?raw=true "Title")
 * Share this id to people with whom you want to communicate and send media files
+![Alt text](demo2.png?raw=true "Title")
+
 
 
 # Backend usage
