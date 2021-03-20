@@ -1,64 +1,93 @@
 .app {
   text-align: center;
-  background-color: rgb(196, 239, 240);
+  background-color: white;
   margin: 0px;
   padding: 0px;
+  display: grid;
+  place-items: center;
 }
-.app_input {
-  margin-top: 10px;
-}
+
 .app_input_message {
   display: flex;
   position: absolute;
   bottom: 0px;
 }
-#message {
-  padding-left: 10px;
-  width: 90vw;
-  height: 50px;
-  font-size: 30px;
-}
 
-#name {
-  padding-left: 10px;
-  width: 50vw;
-  height: 50px;
-  font-size: 30px;
-}
-#id {
-  padding-left: 10px;
-  width: 50vw;
-  height: 50px;
-  font-size: 30px;
-}
+
+
 .app_info {
   display: flex;
 }
-.displayMessage {
-  margin: 10px;
-  font-size: 30px;
-  text-align: start;
-  padding: 10px;
-}
-.displayMessage_message {
-  border: solid;
-  padding: 10px;
-  border-radius: 20px;
 
-  width: 40vw;
-  color: white;
-}
-.displayMessage_name {
-  font-size: 20px;
-  color: rgb(80, 80, 80);
-}
-.displayMessage_date {
-  font-size: 16px;
-  color: rgb(80, 80, 80);
-}
-.display {
-  height: 58vh;
-  overflow-y: scroll;
+.app_body {
   display: flex;
-  flex-direction: column-reverse;
+  align-content: center;
+  background-color: #ededed;
+  height: 90vh;
+  width: 90vw;
+  margin-top: -40 px;
+  box-shadow: -1px 4px 20px -6px #0b0a0a;
+}
+.main{
+ 
+  display: flex;
+  flex-direction: column;
+  width:75vw;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width:25vw;
+}
+.input {
+  font-family: "arial", sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+.chat__message {
+  position: relative;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+.chat__name {
+  position: absolute;
+  top: -16px;
+  font-size: 12px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: auto;
+  width: max-content;
+}
+.chat__receiver {
+  margin-left: auto;
+  background-color: #dcf8c6;
+  position: relative;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+.chat__timespace {
+  margin-left: 10px;
+  font-size: x-small;
+}
+.display{
+  overflow: scroll;
+  padding: 20px;
+  height: 70vh;
+  padding-bottom: 60px;
 }

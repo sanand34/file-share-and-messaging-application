@@ -3,23 +3,14 @@ import "./App.css";
 function Chat({ message, name }) {
   return (
     <div
-      style={{
-        marginLeft: `${name === message?.name ? "55vw" : "10px"}`,
-      }}
-      className="displayMessage"
+    className={message?.name!==name?"chat__message":"chat__receiver"
+    }
     >
-      <div
-        style={{
-          backgroundColor: `${
-            name === message?.name ? "rgb(98, 142, 98)" : "rgb(75, 144, 174)"
-          }`,
-        }}
-        className="displayMessage_message"
-      >
+      <div>
         {message?.message}
       </div>
-      <div className="displayMessage_name">---{message?.name}</div>
-      <div className="displayMessage_date">---{message?.date}</div>
+      <div className="chat__name">{message?.name}</div>
+      <div className="chat__timespace">{message?.date}</div>
     </div>
   );
 }

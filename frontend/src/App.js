@@ -1,9 +1,8 @@
 /*eslint-disable*/
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import { v4 } from "uuid";
 import axios from "axios";
 import "./App.css";
-import "./app.scss";
 import Pusher from "pusher-js";
 import Chat from "./Chat.js";
 import UploadFiles from "./components/upload-files";
@@ -11,13 +10,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
-
+  const messagesEndRef = useRef(null)
   const [message1, setMessage1] = useState([]);
   const [message2, setMessage2] = useState([]);
   const [fullMessage, setFullMessage] = useState([]);
   const [fullFile, setFullFile] = useState([]);
 
   const [typed, setTyped] = useState();
+
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   useEffect(() => {
     const pusher = new Pusher("aa24dbbe8e22cfcef8a3", {
@@ -42,6 +46,8 @@ function App() {
   }, [id]);
   useEffect(() => {
     setFullMessage([...fullMessage, ...message1]);
+   scrollToBottom();
+
   }, [message1]);
   useEffect(() => {
     setFullFile([...fullFile, ...message2]);
@@ -57,29 +63,34 @@ function App() {
     let d = new Date();
     let ank = d.toLocaleString();
     let currentDate = /[0-9]*:[0-9]*:[0-9]*/g.exec(JSON.stringify(ank));
-    let day = /[A-za-z]+ [A-za-z]+ [0-9]+/g.exec(JSON.stringify(ank));
-    let year = /[0-9][0-9][0-9][0-9]/g.exec(JSON.stringify(ank));
-    return `${day} ${year} ${currentDate}`;
+    return `${currentDate}`;
   };
 
   return (
     <div className="app">
-      <UploadFiles files={fullFile} id={id} />
+      <div className="app_body">
+      <div className="sidebar"><UploadFiles files={fullFile} id={id} /></div>
+      <div className="main">
+        
       <div className="app_input">
-        <div className="app_input_message">
+      <div className="app_input_message">
+        <form>
           <input
             className="input"
+            type="text"
             id={"message"}
             placeholder="Message"
             value={typed}
             onChange={(e) => {
+              
               setTyped(e.target.value);
             }}
           />
           <button
-            className="button"
+            style={{display:"none"}}
             type="submit"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               console.log(id);
 
               if (id == "") {
@@ -106,10 +117,12 @@ function App() {
               }
 
               setTyped("");
+              
             }}
           >
             Send
           </button>
+      </form>    
         </div>
         <div className="app_info">
           <input
@@ -133,8 +146,8 @@ function App() {
         </div>
 
         <button
-          className="button"
-          style={{ padding: "20px" }}
+          className="btn btn-success"
+          style={{ padding: "20px" ,backgroundColor:"rgb(79,168,70)",color:"white"}}
           onClick={() => {
             if (id == "" || id == "Invalid") {
               setId(v4());
@@ -152,12 +165,17 @@ function App() {
         </button>
       </div>
       <div className="display">
-        <div>
+       
           {fullMessage.map((message) => (
             <Chat key={message.date} message={message} name={name} />
           ))}
-        </div>
+      <div ref={messagesEndRef} />
+
       </div>
+      </div>
+     
+      </div>
+      
     </div>
   );
 }
