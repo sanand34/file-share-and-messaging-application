@@ -33,10 +33,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 * Enter your name
 * Press the generate or check ID button to create an ID
+ 
 ![Alt text](demo1.png?raw=true "Title")
 
 
 * Share this id to people with whom you want to communicate and send media files
+
 ![Alt text](demo2.png?raw=true "Title")
 
 
