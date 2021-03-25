@@ -24,7 +24,7 @@ function App() {
 
   //initialising pusher listeners
   useEffect(() => {
-    const pusher = new Pusher("aa24dbbe8e22cfcef8a3", {
+    const pusher = new Pusher("Get ID", {
       cluster: "ap2",
     });
     const channel1 = pusher.subscribe("messages");
@@ -108,14 +108,11 @@ function App() {
                         console.log("Not Sent");
                       } else {
                         axios
-                          .post(
-                            `https://radiant-cove-97073.herokuapp.com/message/${id}`,
-                            {
-                              name: name,
-                              message: typed,
-                              date: getDate(),
-                            }
-                          )
+                          .post(`http://localhost:8080/message/${id}`, {
+                            name: name,
+                            message: typed,
+                            date: getDate(),
+                          })
                           .then(() => console.log(`Sent`))
                           .catch(function (error) {
                             console.log(error);

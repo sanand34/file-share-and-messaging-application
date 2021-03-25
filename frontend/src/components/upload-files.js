@@ -23,7 +23,7 @@ function UploadFiles({ files, id }) {
       })
       .then(() => {
         axios
-          .post(`https://radiant-cove-97073.herokuapp.com/fileshare/${id}`, {
+          .post(`http://localhost:8080/fileshare/${id}`, {
             name: curFile.name,
           })
           .then(() => console.log(`Sent`))
@@ -78,12 +78,7 @@ function UploadFiles({ files, id }) {
           {files &&
             files.map((file) => (
               <li className="list-group-item">
-                <a
-                  href={
-                    "https://radiant-cove-97073.herokuapp.com/files/" +
-                    file.name
-                  }
-                >
+                <a href={"http://localhost:8080/files/" + file.name}>
                   {file.name}
                 </a>
               </li>
