@@ -55,11 +55,7 @@ node index.js
 
 ### UUID
 
-A universally unique identifier ( **UUID** ) is a 128-bit number used to identify information in
-computer systems.
-
-We are using uuid to make unique groups with multiple members who can exchange
-data among themselves
+A universally unique identifier ( **UUID** ) is a 128-bit number used to identify information in computer systems.We are using uuid to make unique groups with multiple members who can exchange data among themselves
 
 **************************
 
@@ -70,28 +66,14 @@ The frontend is completely made in react and is hosted on firebase hostings.
 
 Extra Libraries we used:
 
-*Axios: **Axios** is a popular, promise-based HTTP client that sports an easy-to-use API and can be used in both the
-browser and Node. js. Making HTTP requests to fetch or save data
+*Axios: **Axios** is a popular, promise-based HTTP client that sports an easy-to-use API and can be used in both the browser and Node. js. Making HTTP requests to fetch or save data
 
-*FS:js **File System**. **Node**. js includes **fs** module to access physical **file system**. The **fs** module is responsible for all the
-asynchronous or synchronous file I/O operations.
+*FS:js **File System**. **Node**. js includes **fs** module to access physical **file system**. The **fs** module is responsible for all the asynchronous or synchronous file I/O operations.
 
 
 ### Working of Frontend
 ![alt text](https://cdn.tutsplus.com/net/uploads/legacy/1059_pusher/pusher_websocket.png)
-Like as shown in the diagram we communicate
-
-with other servers running the same frontend
-
-using pusher.Pusher Connections are made active
-
-on all the browsers when the site is opened.
-
-we send information to pusher and pusher
-
-sends the data to these connections demanding
-
-for that call.
+Like as shown in the diagram we communicate with other servers running the same frontend using pusher.Pusher Connections are made active on all the browsers when the site is opened we send information to pusher and pusher sends the data to these connections demanding for that call.
 
 
 ### Pusher Connection
@@ -112,11 +94,7 @@ for that call.
     };
 ```
 
-We return unbind_all() and unsubscribe() function as
-
-a cleanup function to avoid multiple connections in
-
-the same channel.
+We return unbind_all() and unsubscribe() function as a cleanup function to avoid multiple connections in the same channel.
 
 -->Channel1 is for to listen to new messages
 
@@ -139,11 +117,7 @@ upload(file, onUploadProgress) {
   }
 ```
 
-File is being uploaded on the backend
-
-Server In the /uploads directory in the
-
-Backend using Rest api.
+File is being uploaded on the backend Server In the /uploads directory in the Backend using Rest api.
 
 
 ### Frontend file download
@@ -167,19 +141,7 @@ Backend using Rest api.
       })
 ```
 
-This is a javascript promise where when the
-
-file is uploaded ,we do a post request on the api
-
-to send name of the file and group Uuid to pusher
-
-so that all the pusher connections
-
-get to know if the file from the required uuid is to be
-
-taken into their group with same uuid and their link
-
-to be uploaded for download.
+This is a javascript promise where when the file is uploaded ,we do a post request on the api to send name of the file and group Uuid to pusher so that all the pusher connections get to know if the file from the required uuid is to be taken into their group with same uuid and their link to be uploaded for download.
 
 
 ### Frontend Messaging system
@@ -191,25 +153,12 @@ axios.post(`http://localhost:8080/message/${id}`, {
 })
 ```
 
-The message service is similar
-
-to the file upload system.Here
-
-User name,message and current
-
-time along with the group’s uuid
-
-is sent to the pusher and made
-
-available for the connections with same group uuid to
-
-Get the data
+The message service is similar to the file upload system.Here User name,message and current time along with the group’s uuid is sent to the pusher and made available for the connections with same group uuid to get the data
 
 
 ### Backend Architecture
 
-The backend is developed in NodeJS and the rest api is created using
-ExpressJS .PusherJS is used for sending data to the active pusher connections.
+The backend is developed in NodeJS and the rest api is created using ExpressJS .PusherJS is used for sending data to the active pusher connections.
 
 
 ### API Endpoints
@@ -221,15 +170,7 @@ router.post("/message/:room",message)
     router.post("/fileshare/:room",fileshare)
     router.get("/",welcome)
 ```
-Various endpoints are created for the
-
-Api to perform get and post requests
-
-The names suggest their
-
-Functionalities and their code
-
-Can be seen in the git repository
+Various endpoints are created for the Api to perform get and post requests The names suggest their Functionalities and their code Can be seen in the git repository
 
 
 ### File storage in the backend
@@ -245,17 +186,7 @@ let storage = multer.diskStorage({
 });
 ```
 
-For storing file we use multer middleware
-
-Multer is a node.js middleware for handling
-
-multipart/form-data, which is primarily used for uploading
-
-files. It is written on top of busboy for maximum efficiency.
-
-All the incoming files are getting
-
-Stored in the /uploads directory
+For storing file we use multer middleware Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency. All the incoming files are getting Stored in the /uploads directory
 
 
 ### Picture
