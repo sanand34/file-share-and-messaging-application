@@ -73,7 +73,7 @@ Extra Libraries we used:
 
 
 ### Working of Frontend
-![alt text](https://cdn.tutsplus.com/net/uploads/legacy/1059_pusher/pusher_websocket.png)
+
 Like as shown in the diagram we communicate with other servers running the same frontend using pusher.Pusher Connections are made active on all the browsers when the site is opened we send information to pusher and pusher sends the data to these connections demanding for that call.
 
 
